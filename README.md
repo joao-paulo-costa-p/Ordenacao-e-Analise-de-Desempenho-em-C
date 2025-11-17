@@ -53,14 +53,23 @@ Tabela de Desempenho (CSV formatado)
 RGM: 46000330
 
 metodo, N, caso, passos, tempo
+
 bubble,8,rgm,39,0.002
+
 RGM Original: 4 6 0 0 0 3 3 0
+
 RGM Ordenado: 0 0 0 0 3 3 4 6
+
 bubble,100,aleatorio,7517,0.035
+
 bubble,1000,aleatorio,748960,2.231
+
 bubble,5000,aleatorio,18805692,44.183
+
 bubble,10000,aleatorio,74954281,177.822
+
 bubble,10000,melhor caso ordenado,9999,0.022
+
 bubble,10000,pior caso reverso,99990000,251.269
 
 Nota: Os valores reais de tempo_ms podem variar significativamente dependendo do hardware e da carga de trabalho da CPU.
