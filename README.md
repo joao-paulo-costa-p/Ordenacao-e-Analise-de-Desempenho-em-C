@@ -50,85 +50,18 @@ Para atender ao requisito de média de 5 execuções, a tabela abaixo apresenta 
 
 Tabela de Desempenho (CSV formatado)
 
-método
+RGM: 46000330
 
-N
-
-caso
-
-passos (média)
-
-tempo_ms (média)
-
-bubble
-
-N_RGM
-
-rgm
-
-$\approx N^2/2$
-
-0.000
-
-bubble
-
-100
-
-Aleatorio
-
-4.950
-
-0.000
-
-bubble
-
-1.000
-
-Aleatorio
-
-499.500
-
-0.002
-
-bubble
-
-5.000
-
-Aleatorio
-
-12.497.500
-
-0.075
-
-bubble
-
-10.000
-
-Aleatorio
-
-49.995.000
-
-0.300
-
-bubble
-
-10.000
-
-Melhor caso ordenado
-
-9.999
-
-0.000
-
-bubble
-
-10.000
-
-Pior caso reverso
-
-49.995.000
-
-0.320
+metodo, N, caso, passos, tempo
+bubble,8,rgm,39,0.002
+RGM Original: 4 6 0 0 0 3 3 0
+RGM Ordenado: 0 0 0 0 3 3 4 6
+bubble,100,aleatorio,7517,0.035
+bubble,1000,aleatorio,748960,2.231
+bubble,5000,aleatorio,18805692,44.183
+bubble,10000,aleatorio,74954281,177.822
+bubble,10000,melhor caso ordenado,9999,0.022
+bubble,10000,pior caso reverso,99990000,251.269
 
 Nota: Os valores reais de tempo_ms podem variar significativamente dependendo do hardware e da carga de trabalho da CPU.
 O gráfico de crescimento de passos é crucial para visualizar a diferença entre $O(n^2)$ e $O(n)$. O caso Aleatório e Pior Caso seguirão uma curva parabólica (quadrática), enquanto o Melhor Caso será quase linear.
@@ -137,22 +70,9 @@ O gráfico de crescimento de passos é crucial para visualizar a diferença entr
 
 5.1. Computabilidade vs. Escalabilidade
 
-Aspecto
-
-Bubble Sort
-
-Observações
-
-Computabilidade
-
-Alta (Correto, Estável, $O(1)$ Espaço)
-
-O algoritmo é simples e garante a ordenação, além de ser um algoritmo estável (mantém a ordem relativa de elementos iguais). Seu uso de memória é mínimo (in-place, $O(1)$).
-
-Escalabilidade
-Baixa ($O(n^2)$)
-
-Este é o ponto fraco. O crescimento dos passos é muito rápido em função de $N$. Para $N=10.000$, o número de passos é na ordem de $50$ milhões, demonstrando que o Bubble Sort é inviável para grandes volumes de dados.
+| Aspecto | Bubble Sort | Observações |
+| Computabilidade | Alta (Correto, Estável, $O(1)$ Espaço) | O algoritmo é simples e garante a ordenação, além de ser um algoritmo estável (mantém a ordem relativa de elementos iguais). Seu uso de memória é mínimo (in-place, $O(1)$). |
+| Escalabilidade | Baixa ($O(n^2)$) | Este é o ponto fraco. O crescimento dos passos é muito rápido em função de $N$. Para $N=10.000$, o número de passos é na ordem de $50$ milhões, demonstrando que o Bubble Sort é inviável para grandes volumes de dados. |
 
 5.2. Limites Observados (Sensibilidade ao Caso)
 Melhor Caso ($O(n)$): O array ordenado (Melhor caso ordenado) mostrou uma eficiência excepcional, com o número de passos crescendo linearmente ($\approx N$). Isso valida a importância da otimização com a flag de swapped.
